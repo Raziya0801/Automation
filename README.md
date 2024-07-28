@@ -22,8 +22,8 @@ Make sure you have your LambdaTest credentials with you to run test automation s
 * For **Linux/macOS**:
   
   ```bash
-export LT_USERNAME=nazeer31.mohd
-export LT_ACCESS_KEY=r4kngtAUMeN1lITWfy76pxd5O4QoekH89MDofo98s4rbh3xgyN
+export LT_USERNAME=raziya31.mohd
+export LT_ACCESS_KEY=pll0eSKlIQgG3sITtj2eRAJh8vAB4IfST8sHcM9RdhauwrGlw6
   ```
   * For **Windows**:
   ```bash
