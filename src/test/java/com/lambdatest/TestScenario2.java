@@ -36,7 +36,7 @@ public class TestScenario2 {
         caps.setCapability("video", true);
         caps.setCapability("network", true);
         caps.setCapability("terminal", true);
-        caps.setCapability("build", "Selenium 101 Assignment testing");
+        caps.setCapability("build", "Selenium 101 Assignment");
         caps.setCapability("name", m.getName() + " - " + this.getClass().getName());
         caps.setCapability("plugin", "git-testng");
 
