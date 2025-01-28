@@ -1,8 +1,12 @@
 package com.lambdatest;
-
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.net.URL;
 
 public class SeleniumJavaScenario1 {
@@ -37,12 +41,38 @@ public class SeleniumJavaScenario1 {
             String url = "https://www.lambdatest.com/selenium-playground";
             driver.get(url);
             System.out.println("Opened URL: " + url);
+            WebDriverWait wait = new WebDriverWait(driver, 10);
+            WebElement simpleFormDemoButton = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Simple Form Demo")));
+            simpleFormDemoButton.click();
 
-            // Your additional test actions go here
-            // Example: You could add element interactions, validations, etc.
+            // Step 3: Validate that the URL contains “simple-form-demo”
+            String currentUrl = driver.getCurrentUrl();
+            if (currentUrl.contains("simple-form-demo")) {
+                System.out.println("URL validation passed: " + currentUrl);
+            } else {
+                System.out.println("URL validation failed: " + currentUrl);
+            }
 
-            // For example: Print page title
-            System.out.println("Page title: " + driver.getTitle());
+            // Step 4: Create a variable for a string value
+            String message = "Welcome to LambdaTest";
+
+            // Step 5: Enter the message into the "Enter Message" text box
+            WebElement messageTextBox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("user-message")));
+            messageTextBox.sendKeys(message);
+
+            // Step 6: Click “Get Checked Value”
+            WebElement getCheckedValueButton = driver.findElement(By.xpath("//button[@onclick='showInput();']"));
+            getCheckedValueButton.click();
+
+            // Step 7: Validate that the same text message is displayed under “Your Message:” section
+            WebElement yourMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("message")));
+            String displayedMessage = yourMessage.getText();
+
+            if (displayedMessage.equals(message)) {
+                System.out.println("Message validation passed: " + displayedMessage);
+            } else {
+                System.out.println("Message validation failed: " + displayedMessage);
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
