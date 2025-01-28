@@ -19,7 +19,6 @@ import org.testng.asserts.SoftAssert;
 public class TestNGScenario1 {
 
     private WebDriver driver;
-
     @BeforeMethod
     @Parameters({"browser", "url"})
     public void setup(@Optional("chrome") String browser, @Optional("https://www.lambdatest.com/selenium-playground/") String url, Method m) throws MalformedURLException {

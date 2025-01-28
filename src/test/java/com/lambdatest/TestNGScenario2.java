@@ -3,16 +3,15 @@ package com.lambdatest;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 
 public class TestNGScenario2 {
@@ -47,9 +46,14 @@ public class TestNGScenario2 {
 
         // Step 1: Click “Checkbox Demo”
         WebElement checkboxDemoLink = driver.findElement(By.linkText("Checkbox Demo"));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.linkText("Checkbox Demo")));
         checkboxDemoLink.click();
 
         // Step 2: Click the checkbox under the “Single Checkbox Demo” section
+
+
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("isAgeSelected")));
         WebElement singleCheckbox = driver.findElement(By.id("isAgeSelected"));
         singleCheckbox.click();
 
