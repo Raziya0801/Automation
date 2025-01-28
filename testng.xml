@@ -5,6 +5,8 @@
         <parameter name="url" value="https://www.lambdatest.com/selenium-playground/" />
         <classes>
             <class name="com.lambdatest.TestNGScenario1" />
+            <class name="com.lambdatest.TestNGScenario2" />
+            <class name="com.lambdatest.TestNGScenario3" />
         </classes>
     </test>
 </suite>
