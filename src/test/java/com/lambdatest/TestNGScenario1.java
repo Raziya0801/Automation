@@ -26,13 +26,13 @@ public class TestNGScenario1 {
     @BeforeMethod
     @Parameters({"browser", "url"})
     public void setup(String browser, String url, Method m) throws MalformedURLException {
-        String username = "raziya.mohammad";
-        String authkey = "QUP9UdQjp37svl5FDisEXIIwP2fQxQwYEkQtmpumhO6BITodvr";
+        String username = "raziya31.mohd";
+        String authkey = "pll0eSKlIQgG3sITtj2eRAJh8vAB4IfST8sHcM9RdhauwrGlw6";
         String hub = "@hub.lambdatest.com/wd/hub";
 
         DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability("platform", "Windows 11");
-        caps.setCapability("browserName", browser);
+        caps.setCapability("platform", "MacOS Catalina");
+        caps.setCapability("browserName", Safari);
         caps.setCapability("version", "latest");
         caps.setCapability("visual", true);
         caps.setCapability("video", true);
