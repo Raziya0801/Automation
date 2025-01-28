@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="LambdaTestSuite">
+    <test name="LambdaTest Scenarios">
+        <parameter name="browser" value="chrome" />
+        <parameter name="url" value="https://www.lambdatest.com/selenium-playground/" />
+        <classes>
+            <class name="com.lambdatest.TestNGScenario1" />
+        </classes>
+    </test>
+</suite>
