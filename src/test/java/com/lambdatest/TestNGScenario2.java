@@ -23,9 +23,9 @@ public class TesNGScenario2 {
 
     @BeforeMethod
     @Parameters({"browser", "url"})
-    public void setup(@Optional("chrome") String browser, String url, Method m, ITestContext ctx) throws MalformedURLException {
+    public void setup(@Optional("chrome") String browser, @Optional("https://www.lambdatest.com/selenium-playground/") String url, Method m) throws MalformedURLException {
         String username = "raziya.mohammad";
-        String authkey = "pQUP9UdQjp37svl5FDisEXIIwP2fQxQwYEkQtmpumhO6BITodvr";
+        String authkey = "QUP9UdQjp37svl5FDisEXIIwP2fQxQwYEkQtmpumhO6BITodvr";
         String hub = "@hub.lambdatest.com/wd/hub";
 
         DesiredCapabilities caps = new DesiredCapabilities();
