@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.URL;
+import java.time.Duration;
 
 public class SeleniumJavaScenario1 {
 
@@ -61,7 +62,8 @@ public class SeleniumJavaScenario1 {
             messageTextBox.sendKeys(message);
 
             // Step 6: Click “Get Checked Value”
-            WebElement getCheckedValueButton = driver.findElement(By.xpath("//button[@onclick='showInput();']"));
+            WebElement getCheckedValueButton = driver.findElement(By.xpath("//*[@id='showInput']"));
+            wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//*[@id='showInput']")));
             getCheckedValueButton.click();
 
             // Step 7: Validate that the same text message is displayed under “Your Message:” section
